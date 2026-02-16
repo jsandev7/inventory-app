@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Google Sans", sans-serif;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}
+
+body {
+  min-width: 100dwv;
+  max-width: 100dwv;
+}
+
+body,
+main,
+section {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  max-width: 100%;
+}
+
+nav {
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: oklch(27.8% .033 256.848);
+  color: #e5e5e5;
+  border-radius: 8px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #adadad;
+}
+
+li a:hover {
+  color: #e5e5e5;
+  /* text-decoration: underline; */
+}
+
+h1 {
+  letter-spacing: 0.2rem;
+}
+
+h1 a:hover {
+  color: #e5e5e5;
+}
+
+h1 a:visited, td a:visited {
+  color: #e5e5e5;
+}
+
+main header {
+  align-self: center;
+  margin: 1.5rem;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+.form-section, .card-item {
+  border: solid 1px #1f1f1f;
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 85dvw;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.card-item {
+  align-items: normal;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  min-width: 90%;
+}
+
+input, textarea, button, fieldset, select, td a, .card-item a {
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 0.5rem;
+  border: solid 1px #1f1f1f;
+}
+
+button, td a {
+  cursor: pointer;
+  border: none;
+}
+
+button[type="submit"], td a {
+  background-color: oklch(54.6% .245 262.881);
+  color: #e5e5e5;
+}
+
+button[type="submit"]:hover, td a:hover {
+  background-color: oklch(51% .245 262.881);
+  color: #e5e5e5;
+}
+
+button[type="reset"], .card-item a {
+  background-color: oklch(27.8% .033 256.848);
+  color: #e5e5e5;
+}
+
+button[type="reset"]:hover, .card-item a:hover {
+  background-color: oklch(21.8% .033 256.848);
+  color: #e5e5e5;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+fieldset {
+  border: 1px solid #a9a9a9;
+  padding: 1rem;
+}
+
+table, th, tr, td {
+  border-radius: 4px;
+  border-collapse: collapse;
+  border: 1px solid #1f1f1f;
+}
+
+th, td {
+  padding: 0.5rem;
+}
+
+.card-item a {
+  max-width: 100px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .form-section, .card-item {
+    max-width: 600px;
+    min-width: 400px;
+  }
+}

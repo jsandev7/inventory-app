@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Item</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <header>
+      <h1>
+        <a href="../index.html">ISP</a>
+      </h1>
+    </header>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./inventory.html">Inventory</a></li>
+      <li><a href="#">Create Item</a></li>
+    </ul>
+  </nav>
+  <main>
+    <header>
+      <h2>Create Item</h2>
+    </header>
+    <section class="form-section">
+      <form action="" class="form">
+        <input type="text" placeholder="Item's name" required>
+        <fieldset>
+          <legend>Choose item category</legend>
+          <select name="" id="" required>
+            <option value="">Furniture</option>
+            <option value="">Peripherals</option>
+            <option value="">Consumables</option>
+          </select>
+        </fieldset>
+        <input type="number" placeholder="Current stock" required step="1">
+        <input type="number" placeholder="Price in USD" required>
+        <textarea name="" id="" placeholder="Description" 
+        maxlength="100"
+        required></textarea>
+        <label for="entry-date">Entry date: </label>
+        <input type="date" required>
+        <button type="submit">Save</button>
+        <button type="reset">Clear</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <h3>Inventory System Pro</h3>
+    <p>&copy; 2026</p>
+  </footer>
+</body>
+
+</html>
