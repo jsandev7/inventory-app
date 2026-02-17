@@ -1,4 +1,4 @@
-const data = [
+[
   {
     "id": "7b2d1a34-5e6f-4c8a-9b1d-2f3e4a5b6c7d",
     "name": "Ergonomic Office Chair",
@@ -45,56 +45,3 @@ const data = [
     "entry_date": "2026-02-01"
   }
 ]
-
-renderTable(data)
-
-function renderTable(data) {
-
-  let tbody = document.querySelector('tbody')
-
-  data.forEach((element, i) => {
-    const tableTemplate = `
-  <tr>
-    <td>${i + 1}</td>
-    <td>${element.name}</td>
-    <td>${element.category}</td>
-    <td>${element.stock}</td>
-    <td>$${parseFloat(element.price).toFixed(2)}</td>
-    <td>${element.description}</td>
-    <td>${element.entry_date}</td>
-    <td>
-        <a href="./details.html?id=${element.id}">Details</a>
-    </td>
-  </tr>
-`
-
-    tbody.innerHTML += tableTemplate
-
-  });
-}
-
-// Add event listener
-// When user clicks on <a> element
-
-function renderItemDetails(data, itemId) {
-
-  const itemCard = document.querySelector('.card-item')
-
-  const item = data.find(element => {
-    element.id === itemId
-  })
-
-  const cardTemplate = `
-      <h4>Name: ${item.name}</h4>
-      <p>Category: ${item.category}</p>
-      <p>Stock: ${item.stock}</p>
-      <p>Price: $${parseFloat(item.price).toFixed(2)}</p>
-      <p>Description: ${item.description}</p>
-      <p>Entry date: ${item.entry_date}</p>
-      <a href="./inventory.html">Back</a>
-  `
-
-  itemCard.innerHTML += cardTemplate
-}
-
-renderItemDetails(data, '7b2d1a34-5e6f-4c8a-9b1d-2f3e4a5b6c7d')
