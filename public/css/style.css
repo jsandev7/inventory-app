@@ -173,4 +173,7 @@ th, td {
     max-width: 600px;
     min-width: 400px;
   }
+  table {
+   max-width: 100%; 
+  }
 }

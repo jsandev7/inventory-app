@@ -76,25 +76,3 @@ function renderTable(data) {
 // Add event listener
 // When user clicks on <a> element
 
-function renderItemDetails(data, itemId) {
-
-  const itemCard = document.querySelector('.card-item')
-
-  const item = data.find(element => {
-    element.id === itemId
-  })
-
-  const cardTemplate = `
-      <h4>Name: ${item.name}</h4>
-      <p>Category: ${item.category}</p>
-      <p>Stock: ${item.stock}</p>
-      <p>Price: $${parseFloat(item.price).toFixed(2)}</p>
-      <p>Description: ${item.description}</p>
-      <p>Entry date: ${item.entry_date}</p>
-      <a href="./inventory.html">Back</a>
-  `
-
-  itemCard.innerHTML += cardTemplate
-}
-
-renderItemDetails(data, '7b2d1a34-5e6f-4c8a-9b1d-2f3e4a5b6c7d')
