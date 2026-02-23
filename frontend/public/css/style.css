@@ -1,0 +1,354 @@
+/* ==========================================================================
+   1. GLOBAL & RESET
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f5f5f7;
+}
+
+body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. NAVIGATION (Auto-adaptable CSS-Only)
+   ========================================================================== */
+nav {
+  background-color: #1f1f1f;
+  color: #e5e5e5;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+a, a:visited {
+  color: #b1b1b1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover { color: #ffffff; }
+
+/* Media Query para Móvil */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+  }
+
+  nav ul li { width: 100%; text-align: center; }
+  nav ul li a { display: block; padding: 0.5rem; }
+}
+
+/* ==========================================================================
+   3. MAIN LAYOUT
+   ========================================================================== */
+main {
+  flex: 1; /* Sticky footer logic */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrado para Form y Details */
+  width: 100%;
+}
+
+/* Clase para la vista de Inventario (evita centrado vertical) */
+main.align-top {
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+main header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+main header h2 {
+  font-size: 2.2rem;
+  color: #1f1f1f;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. FORMS & CARDS
+   ========================================================================== */
+.inventory-form, .details-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.inventory-form {
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+input, select {
+  padding: 0.85rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #1f1f1f;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(31, 31, 31, 0.05);
+}
+
+fieldset {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+fieldset legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ==========================================================================
+   5. TABLE STYLES
+   ========================================================================== */
+.table-container {
+  width: 100%;
+  max-width: 1150px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.inventory-table th {
+  background-color: #f8f9fa;
+  padding: 1.2rem 1rem;
+  border-bottom: 2px solid #f1f1f1;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1f1f1f;
+}
+
+.inventory-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #f1f1f1;
+  color: #444;
+  vertical-align: middle;
+}
+
+.inventory-table tr:hover { background-color: #fafafa; }
+
+/* ==========================================================================
+   6. DETAILS VIEW (Grid)
+   ========================================================================== */
+.details-card { max-width: 700px; }
+
+.details-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.uuid-text {
+  font-size: 0.8rem;
+  color: #888;
+  font-family: monospace;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 500px) { .details-grid { grid-template-columns: 1fr; } }
+
+.detail-item span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.detail-item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.details-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* ==========================================================================
+   7. COMPONENTS (Badges & Buttons)
+   ========================================================================== */
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 90px;
+  text-align: center;
+  display: inline-block;
+}
+
+.badge.active { background-color: #e6f4ea; color: #1e8e3e; }
+.badge.inactive { background-color: #fce8e6; color: #d93025; }
+
+/* FIX BOTÓN DE OPCIONES */
+.btn-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1f1f1f !important;
+  border: 2px solid #1f1f1f;
+  border-radius: 8px;
+  background-color: transparent;
+  white-space: nowrap;
+  min-width: 140px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.btn-detail:hover {
+  background-color: #1f1f1f;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-submit:hover { background-color: #333; transform: translateY(-2px); }
+
+.btn-secondary { color: #1f1f1f; font-weight: 600; font-size: 0.9rem; }
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #999;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   9. ERROR PAGE STYLES (404)
+   ========================================================================== */
+.error-code {
+  font-size: 6rem !important; /* Un número grande y elegante */
+  color: #1f1f1f;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.error-message {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

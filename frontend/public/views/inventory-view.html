@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory App - Inventory</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <header>
+      <h1>
+        <a href="#">Inventory App</a>
+      </h1>
+    </header>
+<ul class="nav-list">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#">Inventory</a></li>
+    <li><a href="./create-item-view.html">Create Item</a></li>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    </ul>
+  </nav>
+
+<main>
+  <header>
+    <h2>Product Inventory</h2>
+  </header>
+<section class="table-container">
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Location</th>
+        <th class="text-center">Options</th> </tr>
+    </thead>
+    <tbody id="inventory-body">
+      <tr>
+        <td><span class="badge active">Active</span></td>
+        <td><strong>MacBook Pro 14 M3</strong></td>
+        <td>Laptops</td>
+        <td>Apple</td>
+        <td>$1,999.99</td>
+        <td>Aisle 4, Shelf B</td>
+        <td class="text-center">
+          <a href="./item-details.html?id=550e8400" class="btn-detail">
+            View Details
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge inactive">Inactive</span></td>
+        <td><strong>LG UltraGear 27"</strong></td>
+        <td>Monitors</td>
+        <td>LG</td>
+        <td>$399.99</td>
+        <td>Aisle 2, Shelf E</td>
+        <td class="text-center">
+          <a href="./item-details.html?id=e5f6g7h8" class="btn-detail">
+            View Details
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+</main>
+
+  <footer>
+    <h4>&copy; 2026</h4>
+  </footer>
+  
+</body>
+</html>

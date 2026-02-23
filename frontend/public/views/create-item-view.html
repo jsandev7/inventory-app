@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory App - Create Item</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <header>
+      <h1><a href="../index.html">Inventory App</a></h1>
+    </header>
+<ul class="nav-list">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./inventory-view.html">Inventory</a></li>
+      <li><a href="#">Create Item</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header>
+      <h2>Create New Electronic Item</h2>
+    </header>
+    <section>
+      <form action="#" method="POST" class="inventory-form">
+        
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. MacBook Pro 14" required>
+        </div>
+
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input type="text" id="brand" name="brand" placeholder="e.g. Apple" required>
+        </div>
+
+        <fieldset>
+          <legend>Status</legend>
+          <label>
+            <input type="radio" name="isActive" value="true" checked> Active
+          </label>
+          <label>
+            <input type="radio" name="isActive" value="false"> Inactive
+          </label>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select name="category" id="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="Laptops">Laptops</option>
+            <option value="Smartphones">Smartphones</option>
+            <option value="Audio">Audio</option>
+            <option value="Peripherals">Peripherals</option>
+            <option value="Monitors">Monitors</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Tablets">Tablets</option>
+            <option value="Components">Components</option>
+            <option value="Cameras">Cameras</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock Quantity</label>
+          <input type="number" id="stock" name="stock_quantity" min="0" placeholder="0" required>
+        </div>
+
+        <div class="form-group">
+          <label for="price">Price (USD)</label>
+          <input type="number" id="price" name="price" step="0.01" min="0" placeholder="0.00" required>
+        </div>
+
+        <div class="form-group">
+          <label for="created_at">Arrival Date</label>
+          <input type="date" id="created_at" name="created_at" required>
+        </div>
+
+        <div class="form-group">
+          <label for="warehouse">Warehouse Location</label>
+          <select name="warehouse_location" id="warehouse" required>
+            <option value="" disabled selected>Select location</option>
+            <option value="Aisle 1">Aisle 1 (Mobile & Tablets)</option>
+            <option value="Aisle 2">Aisle 2 (Monitors)</option>
+            <option value="Aisle 3">Aisle 3 (Audio)</option>
+            <option value="Aisle 4">Aisle 4 (Laptops)</option>
+            <option value="Aisle 5">Aisle 5 (Peripherals)</option>
+            <option value="Aisle 6">Aisle 6 (Gaming)</option>
+            <option value="Aisle 7">Aisle 7 (Components)</option>
+            <option value="Aisle 8">Aisle 8 (Cameras)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Save Item</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <h4>&copy; 2026</h4>
+  </footer>
+  
+</body>
+</html>
