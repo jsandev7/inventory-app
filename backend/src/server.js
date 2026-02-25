@@ -11,7 +11,29 @@ const server = http.createServer(async (req, res) => {
     const data = await getDataFromDB()
     const contentType = 'application/json'
     sendResponse(req, res, 200, contentType, data)
-  } else {
+  } else if (req.method === 'GET' && req.url.startsWith('/api/inventory')) {
+    const urlObj = new URL(req.url, 'http://${req.headers.host}')
+    const queryObj = Object.fromEntries(urlObj.searchParams)
+    console.log(queryObj)
+
+    const data = await getDataFromDB()
+
+    if (Object.keys(queryObj).length === 0) {
+      console.log('Not query parameters')
+      const data = await getDataFromDB()
+      const contentType = 'application/json'
+      sendResponse(req, res, 200, contentType, data)
+    } else {
+      console.log('Have a query parameters')
+      const filteredData = data.filter( element => 
+        element.category.toLowerCase() === queryObj.category.toLowerCase()
+      )
+      const contentType = 'application/json'
+      sendResponse(req, res, 200, contentType, filteredData)
+    }
+  }
+
+  else {
     const data = {
       message: 'Error from API'
     }
