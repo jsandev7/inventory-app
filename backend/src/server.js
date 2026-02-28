@@ -1,6 +1,6 @@
 import http from 'node:http';
 import { serveStaticResource } from './utils/serveStaticResource.js';
-import { getData } from './database/getData.js';
+import { handleGet } from './utils/routeHandlers.js';
 
 const PORT = 8000
 
@@ -9,7 +9,16 @@ const connectionMessage = () => console.log(`Server is running on port: ${PORT}`
 const __dirname = import.meta.dirname
 
 const server = http.createServer(async (req, res) => {
-  await serveStaticResource(__dirname, req, res)
+
+  if (!req.url.startsWith('/api')) {
+    return await serveStaticResource(__dirname, req, res)
+  }
+
+  if(req.url === '/api') {
+    if(req.method === 'GET') {
+      return handleGet(res)
+    }
+  }
   // if (req.method === 'GET' && req.url === '/api') {
   //   // const data = await getDataFromDB()
   //   // const contentType = 'application/json'

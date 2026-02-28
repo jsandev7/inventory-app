@@ -6,11 +6,10 @@ import { getContentType } from './getContentType.js'
 export async function serveStaticResource(baseDirectory, req, res) {
 
   const publicPath = join(baseDirectory, '..', '..', 'frontend', 'public')
-  console.log(publicPath)
+
   const filePath = join(publicPath,
     req.url === '/' ? 'index.html' : req.url
   )
-  console.log(`File path: ${filePath}`)
 
   const fileExtension = extname(filePath)
 
@@ -18,7 +17,6 @@ export async function serveStaticResource(baseDirectory, req, res) {
 
   try {
     const content = await readFile(filePath, 'utf-8')
-    console.log('Successfully read')
     sendResponse(res, 200, contentType, content)
 
   } catch (error) {

@@ -7,9 +7,7 @@ export async function getData() {
   const contentPath = join(filePath, 'data.json')
   try {
     const data = await readFile(contentPath, 'utf-8')
-    console.log(`>> "File read successfully"\n`)
     const parsedData = JSON.parse(data)
-    console.log(parsedData)
     return parsedData
   } catch (error) {
     console.error(`Error reading file: ${error.message}`)
