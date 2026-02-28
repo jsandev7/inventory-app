@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { getDataFromDB } from './database/getDataFromDB.js';
 import { sendResponse } from './utils/sendResponse.js';
+import { getDataByQueryParameters } from './utils/getDataByQueryParameters.js';
 
 const PORT = 8000
 
@@ -25,9 +26,7 @@ const server = http.createServer(async (req, res) => {
       sendResponse(req, res, 200, contentType, data)
     } else {
       console.log('Have a query parameters')
-      const filteredData = data.filter( element => 
-        element.category.toLowerCase() === queryObj.category.toLowerCase()
-      )
+      const filteredData = getDataByQueryParameters(data, queryObj)
       const contentType = 'application/json'
       sendResponse(req, res, 200, contentType, filteredData)
     }
