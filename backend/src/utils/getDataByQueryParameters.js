@@ -1,10 +1,18 @@
 export const getDataByQueryParameters = (data, queryObject) => {
   const {
+    uuid,
     name,
     category,
     brand,
     isActive
   } = queryObject
+
+  if(uuid) {
+    return data.filter(element => {
+      searchUuid = uuid.toLowerCase()
+      return element.uuid.toLowerCase() === searchUuid
+  })
+  }
 
   if (name) {
     return data.filter(element => {
@@ -16,14 +24,14 @@ export const getDataByQueryParameters = (data, queryObject) => {
   if (category) {
     return data.filter(element => {
       const searchCategory = category.toLowerCase()
-      return element.category.toLowerCase() === searchCategory.toLowerCase()
+      return element.category.toLowerCase() === searchCategory
     })
   }
 
   if (brand) {
     return data.filter(element => {
       const searchBrand = brand.toLowerCase()
-      return element.brand.toLowerCase() === searchBrand.toLowerCase()
+      return element.brand.toLowerCase() === searchBrand
     })
   }
 

@@ -7,3 +7,10 @@ try {
 } catch (error) {
   console.error(`Error: ${error.message}`)
 }
+
+const detailsButton = document.querySelector('.btn-detail')
+
+// When click pass and read url params
+detailsButton.addEventListener('click', () => {
+
+})
