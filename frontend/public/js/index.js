@@ -1,7 +1,9 @@
+import { renderTable } from "./utils/renderTable.js"
+import { getInventory } from "./api/api.js"
+
 try {
-  const data = await fetch('/api')
-  const response = await data.json()
-  console.log(response)
+  const data = await getInventory('/api')
+  renderTable(data)
 } catch (error) {
   console.error(`Error: ${error.message}`)
 }
