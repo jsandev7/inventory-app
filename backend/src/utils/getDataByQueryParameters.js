@@ -7,11 +7,11 @@ export const getDataByQueryParameters = (data, queryObject) => {
     isActive
   } = queryObject
 
-  if(uuid) {
+  if (uuid) {
     return data.filter(element => {
       searchUuid = uuid.toLowerCase()
       return element.uuid.toLowerCase() === searchUuid
-  })
+    })
   }
 
   if (name) {

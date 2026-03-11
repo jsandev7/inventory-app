@@ -12,5 +12,5 @@ const detailsButton = document.querySelector('.btn-detail')
 
 // When click pass and read url params
 detailsButton.addEventListener('click', () => {
-
+  
 })
